@@ -86,13 +86,14 @@
   .hearts-burst span{ position:absolute; bottom: 60px; left:50%; font-size:16px; opacity:0; }
   .gift.open .hearts-burst span{ animation: floatHeart 1.4s ease-out forwards; }
   @keyframes floatHeart{ 0%{ opacity:0; transform: translate(-50%,0) scale(.5); } 15%{ opacity:1; } 100%{ opacity:0; transform: translate(var(--dx), -140px) scale(1.1) rotate(var(--rot)); } }
-  .message{ max-height:0; overflow:hidden; opacity:0; transition: max-height .7s ease, opacity .6s ease .1s; margin-top: 10px; }
-  .message.show{ max-height: 260px; opacity:1; }
+  .message{ max-height:0; overflow:hidden; opacity:0; transition: max-height .8s ease, opacity .6s ease .1s; margin-top: 10px; }
+  .message.show{ max-height: 320px; opacity:1; }
   .message-inner{
     background: linear-gradient(135deg, #fff, #f1e6ff); border: 1px solid var(--lilac); border-radius: 16px;
-    padding: 18px 20px; font-family:'Cormorant Garamond', serif; font-size: 26px; color: var(--primary-dark); font-weight:600;
+    padding: 22px 24px; font-family:'Cormorant Garamond', serif; color: var(--primary-dark);
   }
-  .message-inner small{ display:block; font-family:'Quicksand', sans-serif; font-size: 12px; color:#8a76a3; font-weight:500; margin-top:6px; letter-spacing:.5px; }
+  .message-inner .love{ font-size: 26px; font-weight:600; display:block; margin-bottom: 10px; }
+  .message-inner .gratitude{ display:block; font-family:'Quicksand', sans-serif; font-size: 14px; color: var(--text-dark); font-weight:500; line-height:1.6; }
   .footer-note{ margin-top: 30px; font-size:11px; color:#b6a2ce; }
 </style>
 </head>
@@ -132,8 +133,8 @@
 
   <div class="message" id="message">
     <div class="message-inner">
-      Eu te amo, Emanuelly 💜
-      <small>carinhosa · divertida · linda · perfeita · maravilhosa · inteligente · engraçada · doce · especial · única · incrível · amada</small>
+      <span class="love">Eu te amo, Emanuelly 💜</span>
+      <span class="gratitude">Sou grato por ter você como minha namorada, por cada momento ao seu lado, por cada risada, cada carinho e cada dia que faz minha vida mais leve e mais feliz. Obrigado por ser exatamente quem você é.</span>
     </div>
   </div>
 
