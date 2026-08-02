@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Emanuelly 💜</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-deep: #2c1a45;
+    --bg-deep-2: #4a2d70;
+    --card-bg: #f6effc;
+    --primary: #7c4dbc;
+    --primary-dark: #4e2d80;
+    --lilac: #c9a7eb;
+    --glow: #e4c1ff;
+    --text-dark: #3d1f5c;
+    --gold: #e6c988;
+  }
+  *{ box-sizing: border-box; }
+  body{
+    margin:0; min-height:100vh;
+    background: radial-gradient(circle at 50% 0%, var(--bg-deep-2) 0%, var(--bg-deep) 65%);
+    font-family: 'Quicksand', sans-serif;
+    display:flex; align-items:center; justify-content:center;
+    padding: 32px 16px; overflow-x:hidden;
+  }
+  .sky{ position:fixed; inset:0; pointer-events:none; z-index:0; }
+  .sky span{ position:absolute; width:3px; height:3px; background: var(--glow); border-radius:50%; opacity:.5; animation: twinkle 3.5s ease-in-out infinite; }
+  @keyframes twinkle{ 0%,100%{ opacity:.15; transform:scale(1); } 50%{ opacity:.8; transform:scale(1.6); } }
+  .card{
+    position:relative; z-index:1; max-width: 460px; width:100%;
+    background: var(--card-bg); border-radius: 28px; padding: 40px 30px 44px;
+    text-align:center; box-shadow: 0 30px 60px rgba(20,8,40,0.45);
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+  .eyebrow{ font-size:13px; letter-spacing: 3px; text-transform: uppercase; color: var(--primary); font-weight:600; margin-bottom: 6px; }
+  h1{ font-family: 'Cormorant Garamond', serif; font-weight:600; font-size: 42px; color: var(--text-dark); margin: 0 0 6px; }
+  .sub{ font-size:15px; color:#7a6591; margin-bottom: 26px; }
+  .photo-wrap{ position:relative; width: 190px; height: 190px; margin: 0 auto 18px; cursor:pointer; }
+  .photo-ring{ position:absolute; inset:-8px; border-radius:50%; background: conic-gradient(from 0deg, var(--primary), var(--lilac), var(--glow), var(--primary)); animation: spin 6s linear infinite; }
+  @keyframes spin{ to{ transform: rotate(360deg); } }
+  .photo{
+    position:absolute; inset:6px; border-radius:50%; overflow:hidden;
+    background: linear-gradient(135deg, var(--lilac), var(--primary));
+    display:flex; align-items:center; justify-content:center; color:#fff;
+    font-size:13px; font-weight:600; text-align:center; padding:10px;
+    transition: transform .25s ease; border: 4px solid var(--card-bg);
+  }
+  .photo img{ width:100%; height:100%; object-fit:cover; }
+  .photo-wrap:active .photo{ transform: scale(0.96); }
+  .tap-hint{ font-size:12px; color: var(--primary); margin-bottom: 22px; opacity:.85; }
+  .qualities{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; min-height: 40px; margin-bottom: 8px; }
+  .quality{
+    opacity:0; transform: translateY(10px) scale(.9);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color:#fff; padding: 9px 16px; border-radius: 999px; font-size: 14px; font-weight:600;
+    box-shadow: 0 6px 14px rgba(124,77,188,0.35);
+    transition: opacity .5s ease, transform .5s ease;
+  }
+  .quality.show{ opacity:1; transform: translateY(0) scale(1); }
+  .divider{ height:1px; background: linear-gradient(90deg, transparent, var(--lilac), transparent); margin: 30px 0 26px; }
+  .gift-label{ font-family:'Cormorant Garamond', serif; font-size:20px; color: var(--text-dark); margin-bottom: 18px; }
+  .gift-area{ position:relative; height: 170px; display:flex; align-items:flex-end; justify-content:center; }
+  .gift{ position:relative; width:120px; height:100px; cursor:pointer; }
+  .box-body{
+    position:absolute; bottom:0; width:100%; height:76px;
+    background: linear-gradient(135deg, var(--primary), #9a6fd1);
+    border-radius: 6px 6px 10px 10px; box-shadow: inset 0 -8px 14px rgba(0,0,0,0.15);
+    transition: transform .5s ease;
+  }
+  .box-lid{
+    position:absolute; top:22px; left:-6px; width: 132px; height: 24px;
+    background: var(--primary-dark); border-radius: 6px;
+    transition: transform .6s cubic-bezier(.34,1.56,.64,1), opacity .5s ease;
+    transform-origin: left center;
+  }
+  .ribbon-v{ position:absolute; left:50%; top:0; bottom:0; width: 16px; margin-left:-8px; background: var(--gold); z-index:2; }
+  .ribbon-h{ position:absolute; top:22px; left:-6px; width:132px; height:16px; background: var(--gold); z-index:2; border-radius:4px; }
+  .bow{ position:absolute; top: -10px; left:50%; transform: translateX(-50%); font-size: 26px; z-index:3; transition: transform .5s ease, opacity .5s ease; }
+  .gift.open .box-lid{ transform: translateY(-60px) rotate(-35deg); opacity:0; }
+  .gift.open .bow{ transform: translateX(-50%) translateY(-70px) rotate(-20deg); opacity:0; }
+  .gift.open .box-body{ transform: scaleY(0.92); }
+  .hearts-burst{ position:absolute; inset:0; pointer-events:none; }
+  .hearts-burst span{ position:absolute; bottom: 60px; left:50%; font-size:16px; opacity:0; }
+  .gift.open .hearts-burst span{ animation: floatHeart 1.4s ease-out forwards; }
+  @keyframes floatHeart{ 0%{ opacity:0; transform: translate(-50%,0) scale(.5); } 15%{ opacity:1; } 100%{ opacity:0; transform: translate(var(--dx), -140px) scale(1.1) rotate(var(--rot)); } }
+  .message{ max-height:0; overflow:hidden; opacity:0; transition: max-height .7s ease, opacity .6s ease .1s; margin-top: 10px; }
+  .message.show{ max-height: 260px; opacity:1; }
+  .message-inner{
+    background: linear-gradient(135deg, #fff, #f1e6ff); border: 1px solid var(--lilac); border-radius: 16px;
+    padding: 18px 20px; font-family:'Cormorant Garamond', serif; font-size: 26px; color: var(--primary-dark); font-weight:600;
+  }
+  .message-inner small{ display:block; font-family:'Quicksand', sans-serif; font-size: 12px; color:#8a76a3; font-weight:500; margin-top:6px; letter-spacing:.5px; }
+  .footer-note{ margin-top: 30px; font-size:11px; color:#b6a2ce; }
+</style>
+</head>
+<body>
+
+<div class="sky" id="sky"></div>
+
+<div class="card">
+  <div class="eyebrow">Feito com carinho para</div>
+  <h1>Emanuelly</h1>
+  <div class="sub">clique na foto ✨</div>
+
+  <div class="photo-wrap" onclick="revealQualities()">
+    <div class="photo-ring"></div>
+    <div class="photo" id="photo">
+      <img id="photoImg" src="Manus.jpeg" alt="Emanuelly" style="display:block;">
+    </div>
+  </div>
+  <div class="tap-hint" id="hint">toque para revelar</div>
+
+  <div class="qualities" id="qualities"></div>
+
+  <div class="divider"></div>
+
+  <div class="gift-label">e tem um presentinho pra você...</div>
+
+  <div class="gift-area">
+    <div class="gift" id="gift" onclick="openGift()">
+      <div class="ribbon-h"></div>
+      <div class="ribbon-v"></div>
+      <div class="box-lid"></div>
+      <div class="box-body"></div>
+      <div class="bow">🎀</div>
+      <div class="hearts-burst" id="heartsBurst"></div>
+    </div>
+  </div>
+
+  <div class="message" id="message">
+    <div class="message-inner">
+      Eu te amo, Emanuelly 💜
+      <small>carinhosa · divertida · linda · perfeita · maravilhosa · inteligente · engraçada · doce · especial · única · incrível · amada</small>
+    </div>
+  </div>
+
+  <div class="footer-note">para você, sempre</div>
+</div>
+
+<script>
+  const sky = document.getElementById('sky');
+  for(let i=0;i<40;i++){
+    const s = document.createElement('span');
+    s.style.left = Math.random()*100+'%';
+    s.style.top = Math.random()*100+'%';
+    s.style.animationDelay = (Math.random()*3.5)+'s';
+    sky.appendChild(s);
+  }
+
+  const qualities = ['carinhosa','divertida','linda','perfeita','maravilhosa','inteligente','engraçada','doce','especial','única','incrível','amada'];
+  let revealed = false;
+
+  function revealQualities(){
+    if(revealed) return;
+    revealed = true;
+    document.getElementById('hint').style.opacity = 0;
+    const container = document.getElementById('qualities');
+    qualities.forEach((q, i) => {
+      const el = document.createElement('span');
+      el.className = 'quality';
+      el.textContent = q;
+      container.appendChild(el);
+      setTimeout(() => el.classList.add('show'), 200 * (i+1));
+    });
+  }
+
+  let opened = false;
+  function openGift(){
+    if(opened) return;
+    opened = true;
+    const gift = document.getElementById('gift');
+    gift.classList.add('open');
+
+    const burst = document.getElementById('heartsBurst');
+    for(let i=0;i<10;i++){
+      const h = document.createElement('span');
+      h.textContent = '💜';
+      h.style.setProperty('--dx', (Math.random()*120-60)+'px');
+      h.style.setProperty('--rot', (Math.random()*60-30)+'deg');
+      h.style.animationDelay = (Math.random()*0.3)+'s';
+      burst.appendChild(h);
+    }
+
+    setTimeout(() => {
+      document.getElementById('message').classList.add('show');
+    }, 400);
+  }
+</script>
+
+</body>
+</html>
